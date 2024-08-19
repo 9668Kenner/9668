@@ -71,6 +71,7 @@ public class DriveSubsystem extends SubsystemBase {
 
   @Override
   public void periodic() {
+    SmartDashboard.putNumber("gyro", gyro.getYaw());
     // Update the odometry in the periodic block
     m_odometry.update(
         Rotation2d.fromDegrees(gyro.getYaw()),
